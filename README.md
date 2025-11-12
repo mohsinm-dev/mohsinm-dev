@@ -20,12 +20,6 @@ languages = ["Python", "C++", "CUDA"]
 areas = ["Deep Learning", "LLMs", "AI Safety", "Interpretability"]
 ```
 
-## GitHub Statistics
-
-![GitHub Stats](https://github-readme-stats.vercel.app/api?username=mohsinm-dev&show_icons=true&theme=default)
-
-![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=mohsinm-dev&layout=compact&theme=default)
-
 ## Contact
 
 - Website: [mohsinmehmood.com](https://mohsinmehmood.com)
