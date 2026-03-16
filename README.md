@@ -19,18 +19,6 @@ I carefully consider system architecture before writing code, including transact
 
 ---
 
-## Current Research
-
-**Does quantization disproportionately degrade Urdu vs. English?**
-
-Investigating whether post-training quantization (INT4/INT8 via GPTQ, AWQ, bitsandbytes) causes asymmetric accuracy loss for low-resource languages relative to English, using Urdu as the test case. Primary model: [Qalb-1.0-8B-Instruct](https://huggingface.co/enstazao/Qalb-1.0-8B-Instruct) (arXiv: 2601.08141), a Llama-3.1-8B base that is continued-pretrained on 1.84B tokens of Urdu text. Evaluation framework: UrduBench (arXiv:2601.21000, Traversaal.ai), covering math reasoning, commonsense QA, reading comprehension, and NLI.
-
-The experimental design isolates weight quantization from KV-cache quantization across 8 conditions, comparing Qalb against LLaMA-3.1-8B-Instruct as a no-Urdu-CPT baseline. Statistical analysis utilizes bootstrapped confidence intervals to distinguish between real degradation and noise. Experiment tracking in MLflow.
-
-The hypothesis is that quantization compresses away representations that matter more for morphologically rich, right-to-left languages with sparser training data, producing models that appear fine on aggregate benchmarks but fail disproportionately on non-English reasoning tasks.
-
----
-
 ## Technical Depth
 
 ```python
