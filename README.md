@@ -2,7 +2,7 @@
 
 **Machine Learning Engineer · LLM Systems & Agent Architectures · Open-Source Contributor**
 
-Forward Deployed ML Engineer at [Kodamai](https://kodamai.com) (Glasgow). I design and build production core ML and AI systems: multi-agent pipelines, document extraction infrastructure, and LLM-powered workflow automation. Most of my work sits at the boundary between research-grade ML and the messy reality of deploying it in regulated, high-stakes environments.
+Forward Deployed ML Engineer at [Kodamai](https://kodamai.com) (Glasgow). I design and build production core ML and AI systems: multi-agent pipelines, document extraction infrastructure, and LLM-powered workflow automation. Most of my work sits at the boundary between production-grade ML and the messy reality of deploying it in regulated, high-stakes environments.
 
 I carefully consider system architecture before writing code, including transaction boundaries, failure modes, inference latency budgets, and how models degrade in production. I have shipped AI systems in healthcare (HIPAA/PDPA), enterprise supply chain, and early-stage startups, working directly with non-technical domain experts to translate complex processes into automated pipelines.
 
