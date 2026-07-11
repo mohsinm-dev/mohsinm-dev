@@ -1,10 +1,8 @@
 # Mohsin Mehmood
 
-**Machine Learning Engineer · LLM Systems & Agent Architectures · Open-Source Contributor**
+**Software Engineer · AI/ML Systems, Backend & Distributed Platforms**
 
-I design and build production core ML and AI systems: multi-agent pipelines, document extraction infrastructure, and LLM-powered workflow automation. Most of my work sits at the boundary between production-grade ML and the messy reality of deploying it in regulated, high-stakes environments.
-
-I carefully consider system architecture before writing code, including transaction boundaries, failure modes, inference latency budgets, and how models degrade in production. I have shipped AI systems in healthcare (HIPAA/PDPA), enterprise supply chain, and early-stage startups, working directly with non-technical domain experts to translate complex processes into automated pipelines.
+I build production ML/LLM and agent systems in Python and Julia, and I fix the tools underneath them — with merged contributions to the internals of Flax NNX and the CPython interpreter. Most of my work sits at the boundary between production-grade ML and the messy reality of deploying it in regulated, high-stakes environments: healthcare (Singapore PDPA), enterprise supply chain, and early-stage startups.
 
 ---
 
@@ -12,32 +10,37 @@ I carefully consider system architecture before writing code, including transact
 
 | Project | Contribution |
 |---|---|
-| [**google/flax**](https://github.com/google/flax) | **#5 contributor** (last 12 months, official leaderboard). Merged PRs in Flax NNX core: fixed `nnx.tabulate` crash with empty/None values ([#4891](https://github.com/google/flax/pull/4891)); fixed variable hook display bugs in `nnx.tabulate` ([#5008](https://github.com/google/flax/pull/5008)). Both shipped in v0.12.1. |
-| [**python/cpython**](https://github.com/python/cpython) | 6 merged PRs: fixed `TextIOWrapper.tell()` assertion failure with standalone carriage return (backported to 3.13 + 3.14 · [#141331](https://github.com/python/cpython/pull/141331)); fixed `re.Match.group()` doc claiming [1..99] range limit ([#144696](https://github.com/python/cpython/pull/144696)); documented asyncio Task cancellation propagation ([#141249](https://github.com/python/cpython/pull/141249)); fixed inaccurate object comparison docs ([#141221](https://github.com/python/cpython/pull/141221)). |
-| [**pytorch/pytorch**](https://github.com/pytorch/pytorch) | Approved PR in PyTorch core ([#167209](https://github.com/pytorch/pytorch/pull/167209)). |
-| [**uber/causalml**](https://github.com/uber/causalml) | Fixed bug where `estimation_sample_size` was not propagated from `UpliftRandomForestClassifier` to individual trees ([#850](https://github.com/uber/causalml/pull/850)). Silently broken behaviour in the core uplift Cython layer. |
+| [**google/flax**](https://github.com/google/flax) | **#4 contributor by commits over the trailing 12 months** ([contributor graph](https://github.com/google/flax/graphs/contributors)) — 23 commits, +1,165 / −524, all merged into the **NNX core**. 10 merged PRs fixing module-system, transform (`jit`/`vmap`), and dtype-promotion bugs, including [#4891](https://github.com/google/flax/pull/4891) and [#5008](https://github.com/google/flax/pull/5008), both shipped in **v0.12.1**. |
+| [**python/cpython**](https://github.com/python/cpython) | 5 merged fixes. Fixed a hard crash in the C text-I/O core — `TextIOWrapper.tell()` assertion failure on standalone carriage return ([#141331](https://github.com/python/cpython/pull/141331)), backported to **Python 3.13 and 3.14**. Plus four merged documentation fixes: `re.Match.group()` range claim ([#144696](https://github.com/python/cpython/pull/144696)), asyncio Task cancellation propagation ([#141249](https://github.com/python/cpython/pull/141249)), `BufferedRandom` inheritance ([#141629](https://github.com/python/cpython/pull/141629)), and object comparison semantics ([#141221](https://github.com/python/cpython/pull/141221)). |
+| [**pytorch/pytorch**](https://github.com/pytorch/pytorch) | Approved core PR ([#167209](https://github.com/pytorch/pytorch/pull/167209)). |
+| [**uber/causalml**](https://github.com/uber/causalml) | Fixed `estimation_sample_size` not propagating from `UpliftRandomForestClassifier` to individual trees ([#850](https://github.com/uber/causalml/pull/850)) — silently broken behaviour in the core uplift Cython layer. |
 
 ---
 
-## Technical Depth
+## Stack
 
 ```python
-core_ml = {
-    "frameworks":     ["PyTorch", "JAX/Flax", "TensorFlow"],
-    "training":       ["LoRA", "QLoRA", "RLHF", "DPO", "mixed precision", "distributed training"],
-    "inference":      ["quantization (GPTQ/AWQ/bitsandbytes)", "vLLM", "GGUF/MLX", "TensorRT"],
-    "evaluation":     ["RAGAS", "ROUGE", "BERTScore", "bootstrapped CI", "MLflow", "W&B"],
-    "architectures":  ["Transformers", "CNNs", "multi-agent systems", "RAG pipelines"],
-}
+languages = ["Python", "Julia", "C/C++ (CPython core, Cython)", "SQL", "Bash"]
 
-systems = {
-    "design":         ["modular monolith", "worker architecture", "state machines", "transactional outbox"],
-    "infra":          ["Docker", "Kubernetes", "FastAPI", "Redis", "RabbitMQ", "Celery"],
-    "cloud":          ["GCP Vertex AI", "AWS SageMaker / EC2 / Lambda", "Azure ML"],
-    "observability":  ["structured logging", "latency tracing", "drift monitoring", "PHI/PII redaction"],
-    "compliance":     ["HIPAA", "Singapore PDPA"],
-    "languages":      ["Python", "C++", "Bash"],
-}
+genai_and_agents = [
+    "LLM agent & tool-use architectures", "LangChain", "LangGraph", "PydanticAI",
+    "MCP servers", "RAG (hybrid dense+sparse retrieval, reranking)",
+    "multi-provider model routing & failover", "structured outputs",
+    "LoRA / SFT fine-tuning",
+]
+
+ml_and_eval = [
+    "PyTorch", "JAX/Flax (NNX internals)", "XGBoost", "scikit-learn",
+    "HuggingFace", "DeepEval", "LLM-as-judge", "regression suites",
+]
+
+backend_and_infra = [
+    "async/concurrent pipelines", "microservices (REST + message queues)",
+    "blue/green deploys", "distributed tracing (OpenTelemetry)",
+    "GCP (Vertex AI, BigQuery)", "AWS (EC2, Lambda, S3)",
+    "Docker", "GitHub Actions CI/CD",
+    "PostgreSQL", "Redis", "Qdrant", "RabbitMQ", "Airflow",
+]
 ```
 
 ---
@@ -45,5 +48,6 @@ systems = {
 ## Contact
 
 - **Website**: [mohsinmehmood.com](https://mohsinmehmood.com)
-- **LinkedIn**: [mohsin-mehmood675](https://linkedin.com/in/mohsin-mehmood675)
+- **LinkedIn**: [mohsinmehmood-m](https://www.linkedin.com/in/mohsinmehmood-m/)
+- **Email**: to.mohsinmehmood@gmail.com
 - **Location**: Pakistan · Open to relocation
