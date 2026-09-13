@@ -2,7 +2,7 @@
 
 **Software Engineer · AI/ML Systems, Backend & Distributed Platforms**
 
-I build production ML/LLM and agent systems in Python and Julia, and I fix the tools underneath them — with merged contributions to the internals of Flax NNX and the CPython interpreter. Most of my work sits at the boundary between production-grade ML and the messy reality of deploying it in regulated, high-stakes environments: healthcare (Singapore PDPA), enterprise supply chain, and early-stage startups.
+I build production ML/LLM and agent systems in Python and Julia, and I fix the tools underneath them — with merged contributions to the internals of Flax NNX and the CPython interpreter. Most of my work sits at the boundary between production-grade ML and the messy reality of deploying it in regulated, high-stakes environments: healthcare, enterprise supply chain, and early-stage startups.
 
 ---
 
